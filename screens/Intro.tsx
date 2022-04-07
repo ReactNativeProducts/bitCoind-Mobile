@@ -130,48 +130,18 @@ const slides = [
   },
   {
     key: 's2',
-    title: 'Flight Booking',
-    text: 'Upto 25% off on Domestic Flights',
+    title: 'BitCoind',
+    text: 'The Bitcoind App Helps You\n Keep track of bitcoin prices\n at all times. it displays the current price in the\n currency your choosing,\n and you can even customize the referh rate.',
     image: {
       uri:
         'https://raw.githubusercontent.com/tranhonghan/images/main/intro_flight_ticket_booking.png',
     },
     backgroundColor: '#febe29',
   },
-  {
-    key: 's3',
-    title: 'Great Offers',
-    text: 'Enjoy Great offers on our all services',
-    image: {
-      uri:
-        'https://raw.githubusercontent.com/tranhonghan/images/main/intro_discount.png',
-    },
-    backgroundColor: '#22bcb5',
-  },
-  {
-    key: 's4',
-    title: 'Best Deals',
-    text: ' Best Deals on all our services',
-    image: {
-      uri:
-        'https://raw.githubusercontent.com/tranhonghan/images/main/intro_best_deals.png',
-    },
-    backgroundColor: '#3395ff',
-  },
-  {
-    key: 's5',
-    title: 'Bus Booking',
-    text: 'Enjoy Travelling on Bus with flat 100% off',
-    image: {
-      uri:
-        'https://raw.githubusercontent.com/tranhonghan/images/main/intro_bus_ticket_booking.png',
-    },
-    backgroundColor: '#f6437b',
-  },
+ 
   {
     key: 's6',
-    title: 'Train Booking',
-    text: ' 10% off on first Train booking',
+    title: 'Get Started Now!',
     image: {
       uri:
         'https://raw.githubusercontent.com/tranhonghan/images/main/intro_train_ticket_booking.png',
