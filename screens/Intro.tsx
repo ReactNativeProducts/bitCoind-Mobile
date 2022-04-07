@@ -25,7 +25,8 @@ const App = () => {
     return(
       <View style={styles.MainCointainer}>
         <Text  style={styles.title}>{item.title}</Text>
-        <Text>{item.text}</Text>
+        <Text style={styles.text}>{item.text}</Text>
+        <Text style={styles.text2}>{item.text2}</Text>
       </View>
 
     )
@@ -98,10 +99,20 @@ const styles = StyleSheet.create({
   title: {
 
     color: "#fff",
-    marginBottom: 200,
+    marginBottom: 50,
     fontSize: 40,
     fontWeight: "bold",
 
+  }, 
+  text: {
+    color: "#ACACAC",
+    fontSize: 20
+  }, 
+  text2: {
+    color: "#ACACAC",
+    fontSize: 15,
+    fontWeight: "bold",
+    marginTop: 100
   }
 });
 
