@@ -7,7 +7,7 @@
     Intro: undefined;
     NotFound: undefined;
     // render a component with text in it 
-    Root: any;
+    Root: undefined;
   };
   
   export type BottomTabParamList = {
