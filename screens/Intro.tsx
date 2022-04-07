@@ -7,9 +7,45 @@ import {
   StyleSheet,
   StatusBar,
   Pressable,
+  TextInput,
 } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { RootStackParamList } from "../types";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
+
+function LoginScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Login Screen</Text>
+    </View>
+  );
+}
+function SignupScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Login Screen</Text>
+    </View>
+  );
+}
+
+
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={LoginScreen} />
+        <Stack.Screen name="Details" component={SignupScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+
+
 
 const data = [
   {
@@ -24,13 +60,8 @@ const data = [
     bg: "#febe29",
   },
   {
-    title: "Guess what!?",
-    text: "This is the first swipe component!",
-    bg: "#22bcb5",
-  },
-  {
-    title: "Time to gimme your data",
-    text: "Joking!",
+    title: "BitCoind",
+    text: "Get Started now!",
     bg: "#febe29",
   },
 ];
@@ -132,6 +163,7 @@ const styles = StyleSheet.create({
   }
 });
 const renderItem = ({ item }: { item: Item }) => (
+  <NavigationContainer>
   <View
     style={[
       styles.slide,
@@ -149,6 +181,7 @@ const renderItem = ({ item }: { item: Item }) => (
       
 
   </View>
+  </NavigationContainer>
 );
 const RenderPagination = ({
   activeIndex,
@@ -185,7 +218,7 @@ const RenderPagination = ({
               <Text style={styles.buttonText}>Log in</Text>
             </Pressable>
             <Pressable onPress={handleIntroCompleted} style={styles.button}>
-              <Text style={styles.buttonText}>Sign up</Text>
+              <Text style={styles.buttonText} >Sign up</Text>
             </Pressable>
           </View>
         )}
@@ -217,6 +250,7 @@ export const Intro = ({ navigation }: IntroProps) => {
         ref={sliderEl}
       />
     </View>
+    
   );
 };
 export default Intro
