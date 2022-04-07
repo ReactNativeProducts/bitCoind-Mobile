@@ -1,4 +1,4 @@
-import { StackNavigationProp } from "@react-navigation/stack";
+import { createStackNavigator, StackNavigationProp } from "@react-navigation/stack";
 import React, { useRef } from "react";
 import {
   View,
@@ -14,38 +14,23 @@ import { RootStackParamList } from "../types";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator();
+const RootStack = createStackNavigator<RootStackParamList>();
 
-function LoginScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Login Screen</Text>
+<RootStack.Navigator initialRouteName="Intro">
+  <RootStack.Screen name="Root" component={Root} />
+
+</RootStack.Navigator>
+
+function Root(){
+  return(
+    <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
+      <Text>
+        lol
+      </Text>
     </View>
-  );
+    
+  )
 }
-function SignupScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Login Screen</Text>
-    </View>
-  );
-}
-
-
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={LoginScreen} />
-        <Stack.Screen name="Details" component={SignupScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
-
-
 
 const data = [
   {
@@ -163,7 +148,7 @@ const styles = StyleSheet.create({
   }
 });
 const renderItem = ({ item }: { item: Item }) => (
-  <NavigationContainer>
+  
   <View
     style={[
       styles.slide,
@@ -181,7 +166,6 @@ const renderItem = ({ item }: { item: Item }) => (
       
 
   </View>
-  </NavigationContainer>
 );
 const RenderPagination = ({
   activeIndex,
@@ -193,6 +177,7 @@ const RenderPagination = ({
     onIntroCompleted();
   };
   return (
+    <NavigationContainer>
     <View style={styles.paginationContainer}>
       <SafeAreaView>
         <View style={styles.paginationDots}>
@@ -224,13 +209,16 @@ const RenderPagination = ({
         )}
       </SafeAreaView>
     </View>
+    </NavigationContainer>
   );
 };
 export const Intro = ({ navigation }: IntroProps) => {
   const sliderEl = useRef(null);
   const keyExtractor = (item: Item) => item.title;
   const onIntroCompleted = () => {
+    // re direct to login page
     navigation.navigate("Root");
+    
   };
   return (
     <View style={{ flex: 1 }}>

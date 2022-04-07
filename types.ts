@@ -5,8 +5,9 @@
 
  export type RootStackParamList = {
     Intro: undefined;
-    Root: undefined;
     NotFound: undefined;
+    // render a component with text in it 
+    Root: any;
   };
   
   export type BottomTabParamList = {
