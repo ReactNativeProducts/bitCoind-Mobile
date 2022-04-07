@@ -3,6 +3,7 @@ import {
   SafeAreaView, StyleSheet, View, Text, Button
 } from 'react-native';
 
+import MainPage from './MainPage';
 
  
 
@@ -35,24 +36,16 @@ const App = () => {
   }
 
   return (
+    
     <>
     {
       showRealApp ? (
-        <SafeAreaView style={styles.container}>
-        <View style={styles.container}>
-          <Text style={styles.titleStyle}>
-            React Native App Intro Slider using AppIntroSlider
-            </Text>
-          <Text>
-            This will be your screen when you click Skip
-            from any slide or Done button at last
-            </Text>
-        </View>
-        <Button 
-        title="show Intro slider Agaaun"
-        onPress={() => setshowRealApp(false)}
-        />
-      </SafeAreaView>
+        <><MainPage /><View>
+            <Button
+              title="show Intro slider Agaaun"
+              onPress={() => setshowRealApp(false)} />
+          </View></>
+
 
       ) : (
         <AppIntroSlider 
@@ -106,7 +99,8 @@ const styles = StyleSheet.create({
   }, 
   text: {
     color: "#ACACAC",
-    fontSize: 20
+    fontSize: 20,
+    marginLeft: 100
   }, 
   text2: {
     color: "#ACACAC",
